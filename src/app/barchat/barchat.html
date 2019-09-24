@@ -1,0 +1,19 @@
+
+<h4 style="text-align:center"> Dashboard Status do Servi&ccedil;o Nota Fiscal Eletr&ocirc;nica
+  <br/><br/>
+    <!-- <button (click)="randomize()" class="btn btn-primary">Change Data</button> -->
+
+  </h4><br/>
+<div>
+  <div style="display: block; width: 1000px">
+    <canvas baseChart
+            [data]="estados | async"
+            [datasets]="barChartData"
+            [labels]="mbarChartLabels"
+            [options]="barChartOptions"
+            [colors]="barChartColors"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
