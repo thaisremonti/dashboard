@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 export class BarChartComponent implements OnInit {
   constructor(private estadoService: EstadoService) { }
   private estados: Observable<Estado>;
+  private esta: Estado;
 
   ngOnInit() {
-    console.log('c');
     this.estados = this.estadoService.listaTodos();
   }
 
@@ -52,19 +52,19 @@ export class BarChartComponent implements OnInit {
     }
   ];
   public barChartData: any[] = [
-    { data: [], label: 'Verde' },
-    { data: [58, 55, 60, 79, 66, 57, 10], label: 'Vermelho' },
-    { data: [58, 55, 60, 79, 66, 57, 10], label: 'Amarelo' }
+    { data: [15, 50, 10, 10, 10, 10, 70, 100, 10, 19, 150, 10, 49, 30, 75], label: 'Verde' },
+    { data: [58, 55, 60, 79, 86, 57, 80, 100, 10, 19, 100, 10, 19, 35, 75], label: 'Vermelho' },
+    { data: [58, 55, 60, 79, 66, 57, 10, 100, 10, 19, 100, 10, 19, 35, 75], label: 'Amarelo' }
   ];
 
-  // events
-  public chartClicked(e: any): void {
-    console.log(e);
-  }
+    // events
+    public chartClicked(e: any): void {
+      console.log(e);
+    }
 
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
+    public chartHovered(e: any): void {
+      console.log(e);
+    }
 
   public randomize(): void {
     let data = [
